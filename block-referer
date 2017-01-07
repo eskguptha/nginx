@@ -1,0 +1,32 @@
+# /etc/nginx/conf.d/blacklist.conf
+
+map $http_referer $bad_referer {
+    hostnames;
+
+    default                           0;
+
+    # Put regexes for undesired referers here
+    "~a.com"             1;
+    
+    
+ # /etc/nginx/sites-enabled/mysite.conf
+
+server {
+  # ...
+
+  if ($bad_referer) {
+    return 444;
+  }
+
+  # ...
+}
+
+sudo service nginx restart
+
+# with subdomain
+ $ curl --referer http://www.a.com https://domain.com
+curl: (52) Empty reply from server
+
+# without subdomain
+ $ curl --referer http://a https://domain.com
+curl: (52) Empty reply from server
