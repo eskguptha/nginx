@@ -9,3 +9,8 @@ geoip_country /home/ubuntu/GeoIP.dat;
            RU no;
 
         }
+
+#sudo nano /etc/nginx/sites-enabled/test.conf
+if ($allowed_country = no) {
+                return 404;
+               }
