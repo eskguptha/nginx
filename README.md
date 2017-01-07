@@ -1,3 +1,4 @@
+Bolck user from Country Block referers Page Redirect load static 404 deny ip Rewrite
 # nginx
 Bolck user from Country
 Block referers
