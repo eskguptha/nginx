@@ -1,0 +1,11 @@
+Block users from country using GeoIP.dat
+
+#sudo nano /etc/nginx/nginx.conf
+geoip_country /home/ubuntu/GeoIP.dat;
+         map $geoip_country_code $allowed_country
+         {
+           default yes;
+           #IN no;
+           RU no;
+
+        }
