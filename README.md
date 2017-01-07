@@ -43,11 +43,7 @@ server {
     listen 80;
     server_name domain.com;
 
-    rewrite ^/(.*) http://domain.com/$1 permanent;
-
-
-
-
+    rewrite ^/(.*) http://domain.com/$1 permanent
 
 
 
